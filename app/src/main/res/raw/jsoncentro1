@@ -1,0 +1,1115 @@
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJLy2wvgaLzYURXEIRxGdkHP0",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJDxYvn6mLzYUR2ij5eEi0OBw",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJ8eQ0B6mLzYURq9x5_Rqq9eo",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJfw8d1K6LzYURd1qIl6TNxzw",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJM-5v466LzYURm6aily4wtIM",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJB6m9hBqLzYURa3ypQU5k-x4",
+         "types" : [ "establishment", "lodging", "point_of_interest" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJx7Tt1FCKzYUR6LZKASN-iqo",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJD1jnkimKzYURr-r62MhwPOE",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJD8l9j4iJzYURrACFsn2p7I4",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJp-tA44uJzYUR0LbvqcaUC_o",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJ3_Aeuo2JzYURUwKl6NoqkC8",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJURz0h42JzYURP5UBLHWWyp4",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJRZikW5SJzYURHS2lq6Hoqzs",
+         "types" : [ "street_address" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJoRbeNOqJzYURx4RU4WkJUZE",
+         "types" : [ "street_address" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 19.2932822,
+               "lng" : -99.58515270000001
+            },
+            "southwest" : {
+               "lat" : 19.2590444,
+               "lng" : -99.6536818
+            }
+         },
+         "copyrights" : "Datos del mapa ©2019 Google, INEGI",
+         "legs" : [
+            {
+               "distance" : {
+                  "text" : "0.8 km",
+                  "value" : 764
+               },
+               "duration" : {
+                  "text" : "2 min",
+                  "value" : 143
+               },
+               "end_address" : "Acequia K, Andrés Molina Enríquez, 52149 Metepec, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2612311,
+                  "lng" : -99.5921699
+               },
+               "start_address" : "Av 4 11, San Jose la Pila, 52149 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.261804,
+                  "lng" : -99.58515270000001
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.7 km",
+                        "value" : 740
+                     },
+                     "duration" : {
+                        "text" : "2 min",
+                        "value" : 137
+                     },
+                     "end_location" : {
+                        "lat" : 19.2614438,
+                        "lng" : -99.5921858
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003eoeste\u003c/b\u003e por \u003cb\u003eAv 4\u003c/b\u003e/\u003cb\u003eHacienda la Quemada\u003c/b\u003e hacia \u003cb\u003eAv 7\u003c/b\u003e.\u003cdiv style=\"font-size:0.9em\"\u003eContinúa hacia Hacienda la Quemada\u003c/div\u003e",
+                     "polyline" : {
+                        "points" : "gaqtBdfy~QBzDFbG?FHdFBz@Bd@@R@l@JbCDtABl@DnA?VH|D"
+                     },
+                     "start_location" : {
+                        "lat" : 19.261804,
+                        "lng" : -99.58515270000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "24 m",
+                        "value" : 24
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 6
+                     },
+                     "end_location" : {
+                        "lat" : 19.2612311,
+                        "lng" : -99.5921699
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e con dirección a \u003cb\u003eAcequia\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "__qtBdrz~Qh@C"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2614438,
+                        "lng" : -99.5921858
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.2 km",
+                  "value" : 166
+               },
+               "duration" : {
+                  "text" : "1 min",
+                  "value" : 37
+               },
+               "end_address" : "Huerta D, Andrés Molina Enríquez, 52149 Metepec, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2599696,
+                  "lng" : -99.59235179999999
+               },
+               "start_address" : "Acequia K, Andrés Molina Enríquez, 52149 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2612311,
+                  "lng" : -99.5921699
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 140
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 30
+                     },
+                     "end_location" : {
+                        "lat" : 19.2599714,
+                        "lng" : -99.5921048
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003esur\u003c/b\u003e por \u003cb\u003eAcequia\u003c/b\u003e hacia \u003cb\u003ePozo\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "u}ptB`rz~QdAED?~ACp@A\\A"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2612311,
+                        "lng" : -99.5921699
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "26 m",
+                        "value" : 26
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 7
+                     },
+                     "end_location" : {
+                        "lat" : 19.2599696,
+                        "lng" : -99.59235179999999
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e con dirección a \u003cb\u003eHuerta\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "yuptBrqz~Q?p@"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2599714,
+                        "lng" : -99.5921048
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.3 km",
+                  "value" : 346
+               },
+               "duration" : {
+                  "text" : "1 min",
+                  "value" : 84
+               },
+               "end_address" : "Av. Hacienda la Quemada 21, INFONAVIT San Francisco, 52176 Metepec, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2596827,
+                  "lng" : -99.5954974
+               },
+               "start_address" : "Huerta D, Andrés Molina Enríquez, 52149 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2599696,
+                  "lng" : -99.59235179999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.3 km",
+                        "value" : 278
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 68
+                     },
+                     "end_location" : {
+                        "lat" : 19.2599007,
+                        "lng" : -99.5949924
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003eoeste\u003c/b\u003e por \u003cb\u003eHuerta\u003c/b\u003e hacia \u003cb\u003eLa Capilla\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "yuptBdsz~Q?d@@p@?j@@X@b@DbB?JBbA@hC?BABAF"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2599696,
+                        "lng" : -99.59235179999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "68 m",
+                        "value" : 68
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 16
+                     },
+                     "end_location" : {
+                        "lat" : 19.2596827,
+                        "lng" : -99.5954974
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e con dirección a \u003cb\u003eAv. Hacienda la Quemada\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "kuptBtc{~QOPn@~@JR"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2599007,
+                        "lng" : -99.5949924
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.2 km",
+                  "value" : 248
+               },
+               "duration" : {
+                  "text" : "1 min",
+                  "value" : 57
+               },
+               "end_address" : "Hacienda Rancho San Francisco 22, INFONAVIT San Francisco, 52176 Metepec, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2597632,
+                  "lng" : -99.5973271
+               },
+               "start_address" : "Av. Hacienda la Quemada 21, INFONAVIT San Francisco, 52176 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2596827,
+                  "lng" : -99.5954974
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 141
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 28
+                     },
+                     "end_location" : {
+                        "lat" : 19.2590444,
+                        "lng" : -99.5966572
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003esuroeste\u003c/b\u003e por \u003cb\u003eAv. Hacienda la Quemada\u003c/b\u003e hacia \u003cb\u003eHacienda Rancho San Francisco\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "_tptBzf{~Q@BFLNXvAzCFNDN"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2596827,
+                        "lng" : -99.5954974
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 107
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 29
+                     },
+                     "end_location" : {
+                        "lat" : 19.2597632,
+                        "lng" : -99.5973271
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e en la 1ª intersección hacia \u003cb\u003eHacienda Rancho San Francisco\u003c/b\u003e.\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la derecha.\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "_pptBbn{~QkA~@_A~@CD"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2590444,
+                        "lng" : -99.5966572
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "1.1 km",
+                  "value" : 1141
+               },
+               "duration" : {
+                  "text" : "5 min",
+                  "value" : 299
+               },
+               "end_address" : "Hacienda Palomeque 130, INFONAVIT San Francisco, 52176 Metepec, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2681865,
+                  "lng" : -99.59767330000001
+               },
+               "start_address" : "Hacienda Rancho San Francisco 22, INFONAVIT San Francisco, 52176 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2597632,
+                  "lng" : -99.5973271
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.2 km",
+                        "value" : 198
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 55
+                     },
+                     "end_location" : {
+                        "lat" : 19.2614742,
+                        "lng" : -99.59739399999999
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003enoroeste\u003c/b\u003e por \u003cb\u003eHacienda Rancho San Francisco\u003c/b\u003e hacia \u003cb\u003eHacienda la Laja\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "otptBhr{~QOLOPC@A?A@aAE[?uDMYC"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2597632,
+                        "lng" : -99.5973271
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.9 km",
+                        "value" : 874
+                     },
+                     "duration" : {
+                        "text" : "4 min",
+                        "value" : 225
+                     },
+                     "end_location" : {
+                        "lat" : 19.2676872,
+                        "lng" : -99.59805870000001
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e con dirección a \u003cb\u003eAv. de los Gobernadores\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "e_qtBtr{~QW]QSm@s@_AoA}@iAaAiAMQCCECIAG?m@?a@ES?e@EK?]ASAu@CE?Q?Q?a@AO@E?C@EBi@^o@f@o@r@{@x@s@p@eAz@u@l@QLKJ]ZYXKHg@^o@l@"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2614742,
+                        "lng" : -99.59739399999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "69 m",
+                        "value" : 69
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 19
+                     },
+                     "end_location" : {
+                        "lat" : 19.2681865,
+                        "lng" : -99.59767330000001
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e con dirección a \u003cb\u003eCalle Manuel J. Clouthier\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la derecha.\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "afrtBzv{~Qq@e@MKYSIG"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2676872,
+                        "lng" : -99.59805870000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "1.2 km",
+                  "value" : 1218
+               },
+               "duration" : {
+                  "text" : "5 min",
+                  "value" : 286
+               },
+               "end_address" : "Blvd. Solidaridad las Torres 23, San Jeronimo Chicahualco, 52170 Metepec, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2772656,
+                  "lng" : -99.59516029999999
+               },
+               "start_address" : "Hacienda Palomeque 130, INFONAVIT San Francisco, 52176 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2681865,
+                  "lng" : -99.59767330000001
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "1.1 km",
+                        "value" : 1133
+                     },
+                     "duration" : {
+                        "text" : "4 min",
+                        "value" : 264
+                     },
+                     "end_location" : {
+                        "lat" : 19.2772115,
+                        "lng" : -99.5944562
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003enordeste\u003c/b\u003e por \u003cb\u003eCalle Manuel J. Clouthier\u003c/b\u003e hacia \u003cb\u003eHacienda Boreje\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "eirtBlt{~QaBkAYUm@a@MKGG[YQMSOsCuBcBeAUMg@YUOgAo@QIeB_A}@c@s@[e@SYA{@]k@OiA[}@YMCs@QAAC?EAMAG?O@]FM@}@NaANuATSDg@PiDv@"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2681865,
+                        "lng" : -99.59767330000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "85 m",
+                        "value" : 85
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 22
+                     },
+                     "end_location" : {
+                        "lat" : 19.2772656,
+                        "lng" : -99.59516029999999
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e con dirección a \u003cb\u003eBlvd. Solidaridad las Torres\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "qattBj`{~QQC?LD`C"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2772115,
+                        "lng" : -99.5944562
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "4.0 km",
+                  "value" : 3963
+               },
+               "duration" : {
+                  "text" : "7 min",
+                  "value" : 429
+               },
+               "end_address" : "5 de Mayo 1115, Valle Don Camilo, 50140 Toluca de Lerdo, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2730194,
+                  "lng" : -99.63243079999999
+               },
+               "start_address" : "Blvd. Solidaridad las Torres 23, San Jeronimo Chicahualco, 52170 Metepec, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2772656,
+                  "lng" : -99.59516029999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.9 km",
+                        "value" : 903
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 72
+                     },
+                     "end_location" : {
+                        "lat" : 19.2767891,
+                        "lng" : -99.60374309999999
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003eoeste\u003c/b\u003e por \u003cb\u003eBlvd. Solidaridad las Torres\u003c/b\u003e hacia \u003cb\u003ePuerto de Acapulco\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "}attBvd{~QFdD@P?zBFhB@`@b@xP@H@rBAdCNtDL~CF~A"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2772656,
+                        "lng" : -99.59516029999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.7 km",
+                        "value" : 745
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 41
+                     },
+                     "end_location" : {
+                        "lat" : 19.2761067,
+                        "lng" : -99.6107667
+                     },
+                     "html_instructions" : "Toma la rampa de la \u003cb\u003eizquierda\u003c/b\u003e en dirección a \u003cb\u003eValle de Bravo\u003c/b\u003e/\u003cb\u003eZinacantepec\u003c/b\u003e",
+                     "polyline" : {
+                        "points" : "}~stBjz|~QFRNt@Fb@F`@Hr@Hf@Jx@D\\Dl@Bf@PvD@d@Bf@Bt@@XTxD@NBh@@p@?xAAhBCvBEj@"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2767891,
+                        "lng" : -99.60374309999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1.8 km",
+                        "value" : 1829
+                     },
+                     "duration" : {
+                        "text" : "4 min",
+                        "value" : 222
+                     },
+                     "end_location" : {
+                        "lat" : 19.2740027,
+                        "lng" : -99.62801499999999
+                     },
+                     "html_instructions" : "Incorpórate a \u003cb\u003eBlvd. Solidaridad las Torres\u003c/b\u003e",
+                     "maneuver" : "merge",
+                     "polyline" : {
+                        "points" : "uzstBhf~~QXlGJzBXlH?BRzDFjANlDHdBZ|I?@LtCP~CZ~FBhA@RRhD@`@DbAFbBDn@FfAJxAp@lE`@nCFb@R~A@V`@jB"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2761067,
+                        "lng" : -99.6107667
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.5 km",
+                        "value" : 486
+                     },
+                     "duration" : {
+                        "text" : "2 min",
+                        "value" : 94
+                     },
+                     "end_location" : {
+                        "lat" : 19.2730194,
+                        "lng" : -99.63243079999999
+                     },
+                     "html_instructions" : "Mantente a la \u003cb\u003ederecha\u003c/b\u003e para permanecer en \u003cb\u003eBlvd. Solidaridad las Torres\u003c/b\u003e.\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la derecha.\u003c/div\u003e",
+                     "maneuver" : "keep-right",
+                     "polyline" : {
+                        "points" : "omstB`ra_RZxABLb@`CZ|A^pCBJHZ@TFf@Jp@h@fDL~@WX"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2740027,
+                        "lng" : -99.62801499999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.8 km",
+                  "value" : 837
+               },
+               "duration" : {
+                  "text" : "2 min",
+                  "value" : 149
+               },
+               "end_address" : "Urawa 106C, Progreso, 50150 Toluca de Lerdo, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2785128,
+                  "lng" : -99.63747409999999
+               },
+               "start_address" : "5 de Mayo 1115, Valle Don Camilo, 50140 Toluca de Lerdo, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2730194,
+                  "lng" : -99.63243079999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.5 km",
+                        "value" : 530
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 89
+                     },
+                     "end_location" : {
+                        "lat" : 19.2763195,
+                        "lng" : -99.63606539999999
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003enoroeste\u003c/b\u003e por \u003cb\u003eCalle Prolongación 5 de Mayo 2 Oriente\u003c/b\u003e hacia \u003cb\u003eAbel Salazar\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "kgstBtmb_RKLuAzAUVkBpB_DrDKNmA~Am@n@aCdCEH"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2730194,
+                        "lng" : -99.63243079999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.2 km",
+                        "value" : 210
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 43
+                     },
+                     "end_location" : {
+                        "lat" : 19.2776414,
+                        "lng" : -99.6374969
+                     },
+                     "html_instructions" : "Continúa por \u003cb\u003eCalle 5 de Mayo 2 Oriente\u003c/b\u003e",
+                     "polyline" : {
+                        "points" : "_|stBldc_R_ClCCBo@p@[Xs@x@CD"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2763195,
+                        "lng" : -99.63606539999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 97
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 17
+                     },
+                     "end_location" : {
+                        "lat" : 19.2785128,
+                        "lng" : -99.63747409999999
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e con dirección a \u003cb\u003eUrawa\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la derecha.\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "gdttBjmc_RQE{C?"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2776414,
+                        "lng" : -99.6374969
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.8 km",
+                  "value" : 805
+               },
+               "duration" : {
+                  "text" : "2 min",
+                  "value" : 147
+               },
+               "end_address" : "Av. Paseo Tollocan 3831, Progreso, 50150 Toluca de Lerdo, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2841118,
+                  "lng" : -99.63922749999999
+               },
+               "start_address" : "Urawa 106C, Progreso, 50150 Toluca de Lerdo, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2785128,
+                  "lng" : -99.63747409999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.6 km",
+                        "value" : 595
+                     },
+                     "duration" : {
+                        "text" : "2 min",
+                        "value" : 105
+                     },
+                     "end_location" : {
+                        "lat" : 19.2838633,
+                        "lng" : -99.6375288
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003enorte\u003c/b\u003e por \u003cb\u003eUrawa\u003c/b\u003e hacia \u003cb\u003eCalle Laura Méndez de Cuenca\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "uittBdmc_R{@@O?kF?mFAsDEoA@sBF{ABs@B"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2785128,
+                        "lng" : -99.63747409999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.2 km",
+                        "value" : 210
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 42
+                     },
+                     "end_location" : {
+                        "lat" : 19.2841118,
+                        "lng" : -99.63922749999999
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e con dirección a \u003cb\u003eAv. Paseo Tollocan\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "ckutBpmc_R}@B@R@t@FdG"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2838633,
+                        "lng" : -99.6375288
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.5 km",
+                  "value" : 455
+               },
+               "duration" : {
+                  "text" : "2 min",
+                  "value" : 104
+               },
+               "end_address" : "Calle Netzahualcoyotl 310B, Vértice, 50090 Toluca de Lerdo, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2852706,
+                  "lng" : -99.64328879999999
+               },
+               "start_address" : "Av. Paseo Tollocan 3831, Progreso, 50150 Toluca de Lerdo, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2841118,
+                  "lng" : -99.63922749999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "86 m",
+                        "value" : 86
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 12
+                     },
+                     "end_location" : {
+                        "lat" : 19.2840285,
+                        "lng" : -99.640033
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003eoeste\u003c/b\u003e por \u003cb\u003eAv. Paseo Tollocan\u003c/b\u003e hacia \u003cb\u003eAv. Paseo Tolocan 28\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "ulutBdxc_R?\\Bv@?V?B?JBNFP"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2841118,
+                        "lng" : -99.63922749999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.4 km",
+                        "value" : 369
+                     },
+                     "duration" : {
+                        "text" : "2 min",
+                        "value" : 92
+                     },
+                     "end_location" : {
+                        "lat" : 19.2852706,
+                        "lng" : -99.64328879999999
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e con dirección a \u003cb\u003eCalle Netzahualcoyotl\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "elutBd}c_RIRGVQn@}@hDSt@IVUx@eApD[jA"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2840285,
+                        "lng" : -99.640033
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.2 km",
+                  "value" : 216
+               },
+               "duration" : {
+                  "text" : "1 min",
+                  "value" : 47
+               },
+               "end_address" : "Valentín Gómez Farías 620, Vértice, 50090 De Sebastián y Fraccionamiento Vértice, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2855242,
+                  "lng" : -99.6452882
+               },
+               "start_address" : "Calle Netzahualcoyotl 310B, Vértice, 50090 Toluca de Lerdo, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2852706,
+                  "lng" : -99.64328879999999
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "92 m",
+                        "value" : 92
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 21
+                     },
+                     "end_location" : {
+                        "lat" : 19.2855751,
+                        "lng" : -99.6441088
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003eoeste\u003c/b\u003e por \u003cb\u003eCalle Netzahualcoyotl\u003c/b\u003e hacia \u003cb\u003eValentín Gómez Farías\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "}sutBpqd_Ro@|BMd@"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2852706,
+                        "lng" : -99.64328879999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.1 km",
+                        "value" : 124
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 26
+                     },
+                     "end_location" : {
+                        "lat" : 19.2855242,
+                        "lng" : -99.6452882
+                     },
+                     "html_instructions" : "Gira levemente a la \u003cb\u003eizquierda\u003c/b\u003e con dirección a \u003cb\u003eValentín Gómez Farías\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la derecha.\u003c/div\u003e",
+                     "maneuver" : "turn-slight-left",
+                     "polyline" : {
+                        "points" : "{uutBtvd_RDrADvC"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2855751,
+                        "lng" : -99.6441088
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.8 km",
+                  "value" : 814
+               },
+               "duration" : {
+                  "text" : "3 min",
+                  "value" : 170
+               },
+               "end_address" : "Valentín Gómez Farías 200, 5 de Mayo, 50090 Toluca de Lerdo, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2855352,
+                  "lng" : -99.652835
+               },
+               "start_address" : "Valentín Gómez Farías 620, Vértice, 50090 De Sebastián y Fraccionamiento Vértice, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2855242,
+                  "lng" : -99.6452882
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.8 km",
+                        "value" : 792
+                     },
+                     "duration" : {
+                        "text" : "3 min",
+                        "value" : 159
+                     },
+                     "end_location" : {
+                        "lat" : 19.2853338,
+                        "lng" : -99.6528309
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003eoeste\u003c/b\u003e por \u003cb\u003eValentín Gómez Farías\u003c/b\u003e hacia \u003cb\u003eAv. 5 de Mayo 2 Ote.\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "ouutB`~d_RBfDB~@?rCFjH?|BBbC@bCBtCBjC@X@n@BhA"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2855242,
+                        "lng" : -99.6452882
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "22 m",
+                        "value" : 22
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 11
+                     },
+                     "end_location" : {
+                        "lat" : 19.2855352,
+                        "lng" : -99.652835
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e con dirección a \u003cb\u003eIgnacio López Rayon\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "itutBdmf_Ri@@"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2853338,
+                        "lng" : -99.6528309
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "0.9 km",
+                  "value" : 934
+               },
+               "duration" : {
+                  "text" : "5 min",
+                  "value" : 315
+               },
+               "end_address" : "Av. Sebastián Lerdo de Tejada 249, Centro, 50000 Toluca de Lerdo, Méx., México",
+               "end_location" : {
+                  "lat" : 19.2932696,
+                  "lng" : -99.6536818
+               },
+               "start_address" : "Valentín Gómez Farías 200, 5 de Mayo, 50090 Toluca de Lerdo, Méx., México",
+               "start_location" : {
+                  "lat" : 19.2855352,
+                  "lng" : -99.652835
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0.9 km",
+                        "value" : 862
+                     },
+                     "duration" : {
+                        "text" : "5 min",
+                        "value" : 282
+                     },
+                     "end_location" : {
+                        "lat" : 19.2932822,
+                        "lng" : -99.6529997
+                     },
+                     "html_instructions" : "Dirígete al \u003cb\u003enorte\u003c/b\u003e por \u003cb\u003eIgnacio López Rayon\u003c/b\u003e hacia \u003cb\u003eInstituto Literario\u003c/b\u003e.",
+                     "polyline" : {
+                        "points" : "suutBfmf_R}B@iD@qC@iA@}@@qB?uCAeA?}@@_ABI?gGDkFJ"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2855352,
+                        "lng" : -99.652835
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "72 m",
+                        "value" : 72
+                     },
+                     "duration" : {
+                        "text" : "1 min",
+                        "value" : 33
+                     },
+                     "end_location" : {
+                        "lat" : 19.2932696,
+                        "lng" : -99.6536818
+                     },
+                     "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e con dirección a \u003cb\u003eAv. Sebastián Lerdo de Tejada\u003c/b\u003e/\u003cb\u003eAv Sebastián Lerdo de Tejada Poniente\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la derecha.\u003c/div\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "_fwtBfnf_R@jB?Z"
+                     },
+                     "start_location" : {
+                        "lat" : 19.2932822,
+                        "lng" : -99.6529997
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "gaqtBdfy~QJ~LHlFJbDZvIHtEnBItDG@tDHlDDlEAFQXz@rApBfEL^kA~@_A~@SRSRaBCoEQi@q@mBcC_CsCQUOEu@?u@EcBI_BCq@?I@o@b@o@f@o@r@oBjB{BhBuAnAs@h@o@l@q@e@g@_@kBsAgAw@USm@g@gDeCwD}B}F}CyAo@YA{@]uBk@kA]_AUUAm@HcFv@{@ViDv@QCDnCHvD?zBFhBd@zQB|BAdCNtDT~FVhAb@`DPvAHtAZzH\\lG@jCE`FEj@XlGd@hLj@xLr@zQl@~KD|Ab@rJLvBJxAp@lEh@rDTvBdBtIZ|A^pCLf@H|@t@xEL~@WXaBhBaChCkDbE{BnCgCnCcCpCkAjAw@~@QE{C?kA@yMAsDEoA@oEJqBF@RLpK?ZBZFPIRYfAqBpH_D`LRrMF~LB`GDxGDdDDxBgDBcMFgGAcC@iABgGDkFJ@fC"
+         },
+         "summary" : "Hacienda la Quemada",
+         "warnings" : [],
+         "waypoint_order" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+      }
+   ],
+   "status" : "OK"
+}

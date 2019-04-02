@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/mapedit"
+                android:id="@+id/imageButton2"
+                android:layout_marginStart="45dp"
+                android:background="@color/Transpate"/>
+        <Button
+                android:text="Lugar de salida"
+                android:layout_width="match_parent"
+                android:textSize="25sp"
+                android:textColor="@color/iconosNavigation"
+                android:layout_height="wrap_content" android:id="@+id/Borigen"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+    </LinearLayout>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/trespuntos"
+            android:layout_marginStart="46dp"
+            android:id="@+id/imageView2"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/mapedit"
+                android:layout_marginStart="45dp"
+                android:id="@+id/imageButton"
+                android:background="@color/Transpate"/>
+        <Button
+                android:text="Lugar de llegada"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:textSize="25sp"
+                android:textColor="@color/iconosNavigation"
+                android:layout_height="wrap_content" android:id="@+id/BDestino"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+    </LinearLayout>
+
+</LinearLayout>
