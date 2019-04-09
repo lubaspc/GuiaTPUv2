@@ -1,39 +1,30 @@
 package com.ittoluca.lubinpc.guiatpu
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import android.content.res.Resources
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.maps.android.PolyUtil
 import com.ittoluca.lubinpc.guiatpu.SQLite.CRUD
 import com.ittoluca.lubinpc.guiatpu.SQLite.Rutas
+import com.ittoluca.lubinpc.guiatpu.SQLite.RutasI
 import com.ittoluca.lubinpc.guiatpu.SQLite.Trayecto
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 class Login : AppCompatActivity() {
 
     private val PermisoFineLocation = android.Manifest.permission.ACCESS_FINE_LOCATION
@@ -66,20 +57,36 @@ class Login : AppCompatActivity() {
         mVisible = true
 
 
-
         Login_continuar.setOnClickListener {
-           val prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
-            val editor = prefs.edit()
-            editor.putBoolean("bandera", true)
-            editor.commit()
-           /* when(getFirstTimeRun()){
-                0->insertarValores()
-            }*/
-            insertarValores()
-           finish()
+            if(Terminos.isChecked){
+                if(!ValidarPermisos()) {
+                    requestPermissions(arrayOf(PermisoFineLocation),1)
+                }
+                val prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+                val editor = prefs.edit()
+                editor.putBoolean("bandera",true)
+                editor.commit()
+                var modeldialog= AlertDialog.Builder(this)
+                val Dialogvista=layoutInflater.inflate(R.layout.cargadno,null)
+                modeldialog.setView(Dialogvista)
+
+                var dialogo=modeldialog.create()
+                dialogo.setCanceledOnTouchOutside(false)
+                dialogo.setCancelable(false)
+                dialogo.window.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.Transpate)))
+                dialogo.show()
+
+
+                GlobalScope.launch {
+                    insertarValores()
+                    dialogo.cancel()
+                    finish()
+                }
+           }
         }
 
     }
+
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
@@ -100,8 +107,10 @@ class Login : AppCompatActivity() {
         mHideHandler.postDelayed(mHideRunnable, delayMillis.toLong())
     }
 
-    companion object {
-        private val UI_ANIMATION_DELAY = 300
+    companion object {private val UI_ANIMATION_DELAY = 300 }
+
+    private fun ValidarPermisos(): Boolean {
+        return ActivityCompat.checkSelfPermission(this, PermisoFineLocation) == PackageManager.PERMISSION_GRANTED
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -110,77 +119,49 @@ class Login : AppCompatActivity() {
             1-> {
                 var permiso=true
                 for(i in grantResults)
-                    permiso=(i== PackageManager.PERMISSION_GRANTED)&&permiso
-                if(grantResults.size>0&& permiso)
-                else{
-                    Toast.makeText(this,"Es nesesario que despermiso para continuar", Toast.LENGTH_LONG).show()
-                    finishAffinity() }
+                    permiso=(i==PackageManager.PERMISSION_GRANTED)&&permiso
+                if(grantResults.size>0&& permiso){
+
+                }
+                else {
+                    Toast.makeText(this, "Es nesesrio que des permiso", Toast.LENGTH_LONG).show()
+                    finishAffinity()
+                }
             }
         }
     }
 
-    private fun ValidarPermisos(): Boolean {
-        return ActivityCompat.checkSelfPermission(this, PermisoFineLocation) == PackageManager.PERMISSION_GRANTED
-    }
-
-
-    override fun onStart() {
-        super.onStart()
-        if(!ValidarPermisos())
-            requestPermissions(arrayOf(PermisoFineLocation),1)
-
-    }
     fun insertarValores(){
-        var Arrat:ArrayList<Rutas> = ArrayList()
+        var Arrat:ArrayList<RutasI> = ArrayList()
         var bit= BitmapFactory.decodeResource(this.resources, R.drawable.tecmonterrey)
-        var read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonrana1))).readText()
-        Arrat.add(Rutas(1,"San Jose La pilita - Tec Monterrey",10.0,bit,"#80FF00",read))
-
-            /*1*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.tecmonterrey)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonrana2))).readText()
-        Arrat.add(Rutas(2,"Tec Monterrey - San Jose La pilita",10.0,bit,"#4C8C0C",read))
+        var read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonrana))).readText()
+        Arrat.add(RutasI("San Jose La pilita - Tec Monterrey",10.0,bit,"#80FF00",read))
 
         /*2*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.centro)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonconfcentro1))).readText()
-        Arrat.add(Rutas(3,"San Jose La pilita - Cosmovitral",10.0,bit,"#FF0000",read))
+        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsoncosmo))).readText()
+        Arrat.add(RutasI("San Jose La pilita - Cosmovitral",10.0,bit,"#FF0000",read))
 
-        /*3*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.centro)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonconfcentro2))).readText()
-        Arrat.add(Rutas(4,"Cosmovitral - San Jose La pilita",10.0,bit,"#D30000",read))
+        /*3*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.maquinita)
+        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonmaquinita))).readText()
+        Arrat.add(RutasI("San Jose La pilita - La maquinita",10.0,bit,"#470000",read))
 
-        /*4*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.maquinita)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonmaquinita1))).readText()
-        Arrat.add(Rutas(5,"San Jose La pilita - La maquinita",10.0,bit,"#470000",read))
+        /*4*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.fabela)
+        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonisidro))).readText()
+        Arrat.add(RutasI("San Jose La pilita - Isidro Fabela",10.0,bit,"#E68100",read))
 
-        /*5*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.maquinita)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jasonmaquinita3))).readText()
-        Arrat.add(Rutas(6,"La maquinita - San Jose La pilita",10.0,bit,"#A41313",read))
-
-        /*6*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.fabela)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonisidro1))).readText()
-        Arrat.add(Rutas(7,"San Jose La pilita - Isidro Fabela",10.0,bit,"#E68100",read))
-
-        /*7*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.fabela)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonisidro2))).readText()
-        Arrat.add(Rutas(8,"Isidro Fabela- San Jose La pilita",10.0,bit,"#7C5804",read))
-
-        /*8*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.cu)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonconfcentro1))).readText()
-        Arrat.add(Rutas(9,"San Jose La pilita - Centro -CU",10.0,bit,"#FB5D5D",read))
-
-        /*9*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.cu)
-        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonconfcentro2))).readText()
-        Arrat.add(Rutas(10,"CU - Centro - San Jose La pilita",10.0,bit,"#491313",read))
+        /*5*/ bit= BitmapFactory.decodeResource(this.resources, R.drawable.cu)
+        read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonconfcentro))).readText()
+        Arrat.add(RutasI("San Jose La pilita - Centro -CU",10.0,bit,"#FB5D5D",read))
 
         val c=CRUD(this)
+        c.Destroy()
         for( i in Arrat)
             c.insertarRutas(i)
-        insertarTrayecto(Arrat)
+        insertarTrayecto(c.consultarRutas())
     }
 
     fun insertarTrayecto(Arrat:ArrayList<Rutas>){
         var array:ArrayList<Trayecto> = ArrayList()
-
         for (p in Arrat){
             val jRoutes: JSONArray
             var jLegs: JSONArray
@@ -227,23 +208,5 @@ class Login : AppCompatActivity() {
         for (i in array)
             c.insertarTray(i)
     }
-
-    //Retorna: 0 primera vez / 1 no es primera vez / 2 nueva versión
-    fun getFirstTimeRun():Int {
-    var sp = this.getSharedPreferences("MYAPP", 0);
-    var result =0
-    var currentVersionCode = BuildConfig.VERSION_CODE;
-    var lastVersionCode = sp.getInt("FIRSTTIMERUN", -1);
-    if (lastVersionCode == -1)
-        result = 0
-    else if (lastVersionCode == currentVersionCode)
-        result =  1
-        else
-        result=2
-
-    sp.edit().putInt("FIRSTTIMERUN", currentVersionCode).apply();
-    return result;
-}
-
 
 }

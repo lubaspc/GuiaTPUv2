@@ -42,8 +42,8 @@ class RutasInf : AppCompatActivity() {
                 distancia+= i.distancia!!
                 tiempo+=i.tiempo!!
             }
-            TDistacia.text=(distancia/1000).toString() + " Kilometros"
-            TTiempo.text=tiempo.toString()+" minutos"
+            TDistacia.text=distancia.toString() + " Kilometros, Totales"
+            TTiempo.text=tiempo.toString()+" Minutos"
 
             for (i in arrayR) {
                 Tnombre.text = i.nombre

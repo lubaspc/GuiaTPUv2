@@ -2,11 +2,14 @@ package com.ittoluca.lubinpc.guiatpu
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.ittoluca.lubinpc.guiatpu.Fragment.Acercad
 import com.ittoluca.lubinpc.guiatpu.Fragment.Main
 import com.ittoluca.lubinpc.guiatpu.Fragment.Todas
@@ -14,24 +17,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val PermisoFineLocation = android.Manifest.permission.ACCESS_FINE_LOCATION
+
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                supportFragmentManager.beginTransaction().replace(R.id.contenedor,
-                    Main()
-                ).commit()
+               supportFragmentManager.beginTransaction().replace(R.id.contenedor, Main()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                supportFragmentManager.beginTransaction().replace(R.id.contenedor,
-                    Todas()
-                ).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.contenedor, Todas()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                supportFragmentManager.beginTransaction().replace(R.id.contenedor,
-                    Acercad()
-                ).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.contenedor, Acercad()).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -41,16 +41,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        supportFragmentManager.beginTransaction().replace(R.id.contenedor, Main()).commit()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
         val prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
         val bandActivity = prefs.getBoolean("bandera", false)
         if (!bandActivity){
             val intento = Intent(this,Login::class.java)
             startActivity(intento)
+        }else{
+            if(!ValidarPermisos()) {
+                requestPermissions(arrayOf(PermisoFineLocation),1)
+            }else{
+                supportFragmentManager.beginTransaction().replace(R.id.contenedor, Main()).commit()
+            }
+
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -66,6 +76,28 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.action_settings -> return true
             else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun ValidarPermisos(): Boolean {
+        return ActivityCompat.checkSelfPermission(this, PermisoFineLocation) == PackageManager.PERMISSION_GRANTED
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when(requestCode){
+            1-> {
+                var permiso=true
+                for(i in grantResults)
+                    permiso=(i== PackageManager.PERMISSION_GRANTED)&&permiso
+                if(grantResults.size>0&& permiso){
+
+                }
+                else {
+                    Toast.makeText(this, "Es nesesrio que des permiso", Toast.LENGTH_LONG).show()
+                    finishAffinity()
+                }
+            }
         }
     }
 

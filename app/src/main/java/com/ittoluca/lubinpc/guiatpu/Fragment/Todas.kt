@@ -14,6 +14,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.maps.android.PolyUtil
 import com.ittoluca.lubinpc.guiatpu.AdaptadorCustom
@@ -63,7 +64,6 @@ class Todas : Fragment() {
                     var list= Dialogvista.findViewById<ListView>(R.id.list)
                     val adaptador= AdaptadorCustom(vieww!!.context, arreglo!!)
                     list.adapter=adaptador
-
                     dialogo.show()
                 }
             }

@@ -16,6 +16,8 @@ class CRUD(context: Context) {
     var colRutas = arrayOf("Id_ruta", "Nombre", "Costo", "Foto", "color","JSon")
     var colTrayecto = arrayOf("Id_ruta", "orden", "Lat0", "Long0", "Lat1", "Long1", "distancia", "Tiempo","Polyline")
 
+   fun Destroy(){ helper.onUpgrade(helper.writableDatabase,1,1) }
+
     fun consultarRutas():ArrayList<Rutas>{
         val db: SQLiteDatabase =helper.readableDatabase
         var Array :ArrayList<Rutas> = ArrayList()
@@ -129,10 +131,9 @@ class CRUD(context: Context) {
         db.insert("Trayecto",null,values)
     }
 
-    fun insertarRutas(T:Rutas){
+    fun insertarRutas(T:RutasI){
         val db: SQLiteDatabase =helper.writableDatabase
         val values=ContentValues()
-        values.put(colRutas[0],T.id_ruta)
         values.put(colRutas[1],T.nombre)
         values.put(colRutas[2],T.costo)
         val baos = ByteArrayOutputStream(20480);

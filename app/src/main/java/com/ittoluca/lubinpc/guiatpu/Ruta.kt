@@ -103,10 +103,8 @@ class Ruta : AppCompatActivity(){
         val solisitud = StringRequest(Request.Method.GET, url, Response.Listener<String> {
             try {
                 trazarRuta(JSONObject(it), mMap)
-                Log.d("HOls", it)
-            } catch (e: Exception) {
-
-            }
+                Log.d("","")
+            } catch (e: Exception) { }
         }, Response.ErrorListener {
             val response = it.networkResponse;
             if (response != null && response.data != null) {
