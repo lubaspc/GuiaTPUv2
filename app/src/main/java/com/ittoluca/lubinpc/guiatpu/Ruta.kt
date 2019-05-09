@@ -3,7 +3,12 @@ package com.ittoluca.lubinpc.guiatpu
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -11,13 +16,13 @@ import com.android.volley.toolbox.Volley
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.Dot
-import com.google.android.gms.maps.model.Gap
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.PolylineOptions
+import com.google.android.gms.maps.model.*
 import com.google.maps.android.PolyUtil
 import com.ittoluca.lubinpc.guiatpu.SQLite.CRUD
+import com.ittoluca.lubinpc.guiatpu.SQLite.PuntosCortos
 import com.ittoluca.lubinpc.guiatpu.SQLite.Rutas
+import com.ittoluca.lubinpc.guiatpu.SQLite.Trayecto
+import kotlinx.android.synthetic.main.activity_ruta.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -40,60 +45,88 @@ class Ruta : AppCompatActivity(){
             .findFragmentById(R.id.mapR) as SupportMapFragment
         mapFragment.getMapAsync(OnMapReadyCallback {
             mMap = Mapa(it, this).Iniialicacion()
-            calculos()
-        })
-    }
-
-    private fun calculos() {
-        var r = 5000.0
-        var Ruta: Rutas? = null
-        var lg: LatLng? = null
-        var orden = 0
-        var r2 = 5000.0
-        var Ruta2: Rutas? = null
-        var lg2: LatLng? = null
-        var orden2 = 0
-        val arrayR = CRUD(this).consultarRutas()
-        for (R in arrayR) {
-            val arrayT = CRUD(this).ConsutaTrayectoxID(R.id_ruta.toString())
-            for (T in arrayT) {
-                var list = PolyUtil.decode(T.polyline!!)
-                for (l in list) {
-                    val distancia = Math.sqrt(Math.pow(l.latitude - Origen.latitude, 2.0) + Math.pow(l.longitude - Origen.longitude, 2.0))
-                    if (distancia < r) {
-                        r = distancia
-                        Ruta = R
-                        lg = l
-                        orden = T.Orden!!
-                    }
-                    val distancia2 = Math.sqrt(Math.pow(l.latitude - Destino.latitude, 2.0) + Math.pow(l.longitude - Destino.longitude, 2.0))
-                    if (distancia2 < r2) {
-                        r2 = distancia2
-                        Ruta2 = R
-                        lg2 = l
-                        orden2 = T.Orden!!
-                    }
-                }
+            mMap.addMarker(MarkerOptions().title("Inicio").position(Origen).icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+            mMap.addMarker(MarkerOptions().position(Destino).title("Destino").icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)))
+            var o =calculos()
+            var modeldialog= AlertDialog.Builder(this)
+            val Dialogvista=layoutInflater.inflate(R.layout.informacion,null)
+            modeldialog.setView(Dialogvista)
+            var dialogo=modeldialog.create()
+            FButton.setOnClickListener {
+                dialogo.show()
             }
 
-        }
+            var modeldialog2= AlertDialog.Builder(this)
+            val Dialogvista2=layoutInflater.inflate(R.layout.instrucciones,null)
+            modeldialog2.setView(Dialogvista2)
+            var dialogo2=modeldialog2.create()
+            FBotInf.setOnClickListener {
+                dialogo2.show()
+            }
+        })
 
-        consulta(Origen,lg!!)
-        consulta(Destino,lg2!!)
-        var arregloT= CRUD(this).ConsutaTrayectoxID(Ruta!!.id_ruta.toString())
-        for (j in arregloT!!){
-            val list = PolyUtil.decode(j.polyline)
-            mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(Ruta!!.Color)).width(20f))
-        }
-        arregloT= CRUD(this).ConsutaTrayectoxID(Ruta2!!.id_ruta.toString())
-        for (j in arregloT!!){
-            val list = PolyUtil.decode(j.polyline)
-            mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(Ruta2!!.Color)).width(20f))
-        }
+    }
 
+    private fun calculos():Rutas {
+        val crud = CRUD(this)
+        val arrayR = crud.consultarRutasID()
+        var PC= arrayListOf<PuntosCortos>()
+        arrayR.forEach {
+            val aT=crud.ConsutaTrayectoxID(it.toString())
+            var distancia=5000000.0
+            for (T in aT){
+               val d= dis(Origen,LatLng(T.Lat0!!,T.Long0!!))
+                if (d<distancia){
+                    distancia=d
+                    PC.add(PuntosCortos(it!!,T.Orden!!,Origen,LatLng(T.Lat0!!,T.Long0!!),d))
+                }
+            }
+        }
+        PC.removeAt(0)
+       while (PC.size>1){
+           if (PC[0].Orden>PC[1].Orden)
+               PC.removeAt(0)
+           else
+               PC.removeAt(1)
+       }
+        val T=crud.ConsutaTrayectoxID(PC[0].id_ruta.toString())
+        var PC2= arrayListOf<PuntosCortos>()
+            var distancia=5000000.0
+            for (t in T){
+                val d= dis(Destino,LatLng(t.Lat0!!,t.Long0!!))
+                if (d<distancia){
+                    distancia=d
+                    PC2.add(PuntosCortos(t.id_ruta!!,t.Orden!!,Destino,LatLng(t.Lat0!!,t.Long0!!),d))
+                }
+            }
+        while (PC2.size>1){
+            if (PC2[0].Orden<PC2[1].Orden)
+                PC2.removeAt(0)
+            else
+                PC2.removeAt(1)
+        }
+        val list= arrayListOf<LatLng>()
+        for (t in T){
+            if(t.Orden!!>=PC[0].Orden && t.Orden!!<=PC2[0].Orden){
+                list.add(LatLng(t.Lat0!!,t.Long0!!))
+            }
+        }
+        var o=crud.consultarRutasxID(PC[0].id_ruta.toString())
+        mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(o[0].Color)).width(25f))
+        consulta(Origen,PC[0].PuntoF)
+        consulta(Destino,PC2[0].PuntoF)
+        mMap.addMarker(MarkerOptions().position(PC[0].PuntoF).title("Punto De aborde").icon(BitmapDescriptorFactory
+            .defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)))
+        mMap.addMarker(MarkerOptions().position(PC2[0].PuntoF).title("Punto de Desenso").icon(BitmapDescriptorFactory
+            .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)))
+        return o[0]
 
 
     }
+
+    //O= es el punto de inicio D: es el punto de destino
      fun consulta(O:LatLng,D:LatLng){
         val url =
             "https://maps.googleapis.com/maps/api/directions/json?origin=" +
@@ -103,7 +136,6 @@ class Ruta : AppCompatActivity(){
         val solisitud = StringRequest(Request.Method.GET, url, Response.Listener<String> {
             try {
                 trazarRuta(JSONObject(it), mMap)
-                Log.d("","")
             } catch (e: Exception) { }
         }, Response.ErrorListener {
             val response = it.networkResponse;
@@ -130,7 +162,7 @@ class Ruta : AppCompatActivity(){
                     for (k in 0 until jSteps.length()) {
                         val polyline = "" + ((jSteps.get(k) as JSONObject).get("polyline") as JSONObject).get("points")
                         val list = PolyUtil.decode(polyline)
-                        mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor("#FFFFFF")).width(15f).pattern(arrayListOf(
+                        mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor("#FFFFFF")).width(20f).pattern(arrayListOf(
                             Dot(), Gap(10f)
                         )))
                     }
@@ -141,10 +173,8 @@ class Ruta : AppCompatActivity(){
         }
     }
 
-    fun distancia (O:LatLng,D:LatLng):Double{
-        var Distancia=0.0
-        Distancia=Math.sqrt(Math.pow(O.latitude - D.latitude, 2.0) + Math.pow(O.longitude - D.longitude, 2.0))
-        return Distancia
+    fun dis (O:LatLng,D:LatLng):Double{
+        return Math.sqrt(Math.pow(O.latitude - D.latitude, 2.0) + Math.pow(O.longitude - D.longitude, 2.0))
     }
         
     }

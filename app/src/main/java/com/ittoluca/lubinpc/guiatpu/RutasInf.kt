@@ -9,6 +9,7 @@ import android.widget.TextView
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.maps.android.PolyUtil
 import com.ittoluca.lubinpc.guiatpu.SQLite.CRUD
@@ -49,10 +50,11 @@ class RutasInf : AppCompatActivity() {
                 Tnombre.text = i.nombre
                 TCosto.text = i.costo.toString()+" pesos"
                 Bcolor.setBackgroundColor(Color.parseColor(i.Color))
+                val list= arrayListOf<LatLng>()
                 for (j in arrayT!!){
-                    val list = PolyUtil.decode(j.polyline)
-                    mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(i.Color)).width(20f))
+                    list.add(LatLng(j.Lat0!!,j.Long0!!))
                 }
+                mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(i.Color)).width(20f))
                 img.setImageBitmap(i.Foto)
             }
         })

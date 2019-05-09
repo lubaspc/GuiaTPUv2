@@ -5,6 +5,7 @@
     <color name="colorAccent">#e53935</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="grisTrans">#E4B3B3B3</color>
     <color name="Transpate">#00000000</color>
     <color name="TranspateDark">#B5FFFFFF</color>
     <color name="Negro">#000</color>

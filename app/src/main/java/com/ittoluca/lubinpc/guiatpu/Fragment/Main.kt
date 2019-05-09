@@ -4,6 +4,7 @@ package com.ittoluca.lubinpc.guiatpu.Fragment
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.location.Location
 import android.os.Bundle
@@ -74,14 +75,13 @@ class Main : Fragment(){
                             var modeldialog = AlertDialog.Builder(view.context)
                             modeldialog.setPositiveButton("", DialogInterface.OnClickListener { dialog, which ->
                                 val tv = view.findViewById<TextView>(R.id.TVBuscar)
-                                Toast.makeText(view.context, "Si entre", Toast.LENGTH_LONG).show()
                                 tv.setText("Selecciona el origen")
                                 OriDes = false
                                 Offline = false
 
                             })
                             modeldialog.setNegativeButton("", DialogInterface.OnClickListener { dialog, which ->
-
+                                this@Main.activity!!.finishAffinity()
                             })
                             modeldialog.setPositiveButtonIcon(resources.getDrawable(R.drawable.palomita))
                             modeldialog.setNegativeButtonIcon(resources.getDrawable(R.drawable.tache))
@@ -90,6 +90,7 @@ class Main : Fragment(){
                             var dialogo = modeldialog.create()
                             dialogo.setCancelable(false)
                             dialogo.setCanceledOnTouchOutside(false)
+                            dialogo.window.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorPrimaryDark)))
                             dialogo.show()
 
                         }

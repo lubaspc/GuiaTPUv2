@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Ruta">
+        tools:context=".Ruta"
+        android:orientation="vertical">
+
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
@@ -14,5 +16,22 @@
               android:layout_marginTop="10dp"
               android:name="com.google.android.gms.maps.SupportMapFragment"
     />
+    <android.support.design.widget.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="100dp"
+            android:background="@color/grisTrans"
+            android:clickable="true" app:srcCompat="@drawable/round_airport_shuttle_black_48"
+            android:id="@+id/FButton" android:backgroundTint="#DDB9B9B9"/>
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="180dp"
+            android:background="@color/grisTrans"
+            android:clickable="true" app:srcCompat="@drawable/round_map_black_36"
+            android:id="@+id/FBotInf" android:backgroundTint="#DDB9B9B9"/>
+
+</FrameLayout>

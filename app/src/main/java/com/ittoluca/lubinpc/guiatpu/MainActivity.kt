@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.ActivityCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -14,6 +15,7 @@ import com.ittoluca.lubinpc.guiatpu.Fragment.Acercad
 import com.ittoluca.lubinpc.guiatpu.Fragment.Main
 import com.ittoluca.lubinpc.guiatpu.Fragment.Todas
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_ruta.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,10 +30,6 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.navigation_dashboard -> {
                 supportFragmentManager.beginTransaction().replace(R.id.contenedor, Todas()).commit()
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-                supportFragmentManager.beginTransaction().replace(R.id.contenedor, Acercad()).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -74,7 +72,14 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_settings -> return true
+            R.id.action_settings -> {
+                var modeldialog= AlertDialog.Builder(this)
+                val Dialogvista=layoutInflater.inflate(R.layout.acercami,null)
+                modeldialog.setView(Dialogvista)
+                var dialogo=modeldialog.create()
+                    dialogo.show()
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
     }

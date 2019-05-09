@@ -2,6 +2,7 @@ package com.ittoluca.lubinpc.guiatpu
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.ColorDrawable
 import android.support.v7.app.AppCompatActivity
@@ -12,12 +13,18 @@ import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.ittoluca.lubinpc.guiatpu.SQLite.CRUD
 import com.ittoluca.lubinpc.guiatpu.SQLite.Rutas
 import com.ittoluca.lubinpc.guiatpu.SQLite.RutasI
 import com.ittoluca.lubinpc.guiatpu.SQLite.Trayecto
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONException
@@ -26,7 +33,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class Login : AppCompatActivity() {
-
+    val c=CRUD(this)
     private val PermisoFineLocation = android.Manifest.permission.ACCESS_FINE_LOCATION
 
     private val mHideHandler = Handler()
@@ -153,7 +160,7 @@ class Login : AppCompatActivity() {
         read = BufferedReader(InputStreamReader(resources.openRawResource(R.raw.jsonconfcentro))).readText()
         Arrat.add(RutasI("San Jose La pilita - Centro -CU",10.0,bit,"#FB5D5D",read))
 
-        val c=CRUD(this)
+
         c.Destroy()
         for( i in Arrat)
             c.insertarRutas(i)
@@ -195,7 +202,7 @@ class Login : AppCompatActivity() {
                             val lng0 = "" + ((jSteps.get(k) as JSONObject).get("start_location") as JSONObject).get("lng")
                             val lat1 = "" + ((jSteps.get(k) as JSONObject).get("end_location") as JSONObject).get("lat")
                             val lng1 = "" + ((jSteps.get(k) as JSONObject).get("end_location") as JSONObject).get("lng")
-                            array.add(Trayecto(p.id_ruta!!,x,lat0.toDouble(),lng0.toDouble(),lat1.toDouble(),lng1.toDouble(),dis.toDouble(),t.toDouble(),polyline))
+                            array.add(Trayecto(p.id_ruta!!,x,lat0.toDouble(),lng0.toDouble(),dis.toDouble(),t.toDouble(),polyline))
                         }
                     }
                 }
@@ -207,6 +214,52 @@ class Login : AppCompatActivity() {
         val c= CRUD(this)
         for (i in array)
             c.insertarTray(i)
+    }
+
+
+
+    fun consultaP(url:String,T:Int){
+        val queue = Volley.newRequestQueue(this)
+        val solisitud = StringRequest(Request.Method.GET, url, Response.Listener<String> {
+
+            obtenerLinks(JSONObject(it),T)
+
+        }, Response.ErrorListener {
+            val response = it.networkResponse;
+            if (response != null && response.data != null) {
+                val errorString = String(response.data);
+
+            }
+        })
+
+        queue.add(solisitud)
+    }
+
+    private fun obtenerLinks(Json: JSONObject,T:Int) {
+        when(T){
+            1->{
+                var links=Json.getJSONArray("links")
+                for (l in 0 until links.length()){
+                    var lk =links[l] as JSONObject
+                    GlobalScope.async {  consultaP( lk.getString("link"),2)}
+                }
+            }
+            2->GlobalScope.async {rutas(Json)}
+        }
+    }
+
+    private fun rutas(json: JSONObject) {
+        var name=json.getString("name")
+        var costo=json.getString("costo")
+        var linkImg =json.getString("nameimg")
+        var color =json.getString("color")
+        var image: Bitmap?=null
+
+
+        image = Picasso.with(this@Login).load(linkImg).get()
+        c.insertarRutas(RutasI(name,costo.toDouble(),image!!,color,json.toString()))
+
+
     }
 
 }

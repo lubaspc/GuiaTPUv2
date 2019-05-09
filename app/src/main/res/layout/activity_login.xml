@@ -16,6 +16,10 @@
             android:gravity="center_vertical"
             android:background="@color/colorPrimary">
 
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp" app:srcCompat="@drawable/amu_bubble_shadow"
+                android:id="@+id/Contend"/>
         <TextView android:id="@+id/fullscreen_content"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"/>
@@ -41,6 +45,7 @@
                 android:shadowColor="@color/colorAccent"
                 android:textColor="#fff"
                 android:layout_marginStart="40sp"
+                android:textSize="25sp"
                 android:layout_height="wrap_content" android:id="@+id/Terminos"
                 style="@android:style/Widget.Material.CompoundButton.CheckBox"/>
         <Button
@@ -48,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:textSize="15sp"
                 android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
                 android:layout_height="wrap_content" android:id="@+id/Login_continuar"
                 tools:layout_editor_absoluteY="500dp" tools:layout_editor_absoluteX="0dp"
                 style="@style/Widget.AppCompat.Button.Colored"/>

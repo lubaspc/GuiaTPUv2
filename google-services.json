@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1068649111307",
+    "firebase_url": "https://guiatpu-1551153438934.firebaseio.com",
+    "project_id": "guiatpu-1551153438934",
+    "storage_bucket": "guiatpu-1551153438934.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068649111307:android:1a567c5021c22662",
+        "android_client_info": {
+          "package_name": "com.ittoluca.lubinpc.guiatpu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068649111307-eao5jadmttg1bdl187la4s68cj96ekd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbHK3gc_oNm3_tRqOWrX4n6ih6vg2HFxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068649111307-eao5jadmttg1bdl187la4s68cj96ekd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

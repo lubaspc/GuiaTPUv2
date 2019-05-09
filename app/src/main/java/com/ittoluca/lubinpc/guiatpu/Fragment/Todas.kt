@@ -1,5 +1,6 @@
 package com.ittoluca.lubinpc.guiatpu.Fragment
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -23,6 +24,7 @@ import com.ittoluca.lubinpc.guiatpu.R
 import com.ittoluca.lubinpc.guiatpu.SQLite.CRUD
 import com.ittoluca.lubinpc.guiatpu.SQLite.Rutas
 import com.ittoluca.lubinpc.guiatpu.SQLite.Trayecto
+import kotlinx.android.synthetic.main.fragment_todas.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -41,32 +43,37 @@ class Todas : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         vieww=inflater.inflate(R.layout.fragment_todas, container, false)
+        var modeldialog= AlertDialog.Builder(vieww!!.context)
+        val Dialogvista=layoutInflater.inflate(R.layout.catalogo,null)
+        modeldialog.setView(Dialogvista)
+        var dialogo=modeldialog.create()
+        var list= Dialogvista.findViewById<ListView>(R.id.list)
+        arreglo= CRUD(vieww!!.context).consultarRutas()
+        val adaptador= AdaptadorCustom(vieww!!.context, arreglo!!)
+        list.adapter=adaptador
+
         var maps=vieww!!.findViewById<MapView>(R.id.maps2)
         if(maps!=null){
             maps.onCreate(null)
             maps.onResume()
             maps.getMapAsync {
                 mMap= Mapa(it, vieww!!.context).Iniialicacion()
-                arreglo= CRUD(vieww!!.context).consultarRutas()
                 for (i in arreglo!!){
                     arregloT= CRUD(vieww!!.context).ConsutaTrayectoxID(i.id_ruta.toString())
+                    val list= arrayListOf<LatLng>()
                    for (j in arregloT!!){
-                       val list = PolyUtil.decode(j.polyline)
-                       mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(i.Color)).width(20f))
+                       list.add(LatLng(j.Lat0!!,j.Long0!!))
                    }
+                    mMap!!.addPolyline(PolylineOptions().addAll(list).color(Color.parseColor(i.Color)).width(20f))
                 }
 
                 mMap.setOnMapClickListener {
-                    var modeldialog= AlertDialog.Builder(vieww!!.context)
-                    val Dialogvista=layoutInflater.inflate(R.layout.catalogo,null)
-                    modeldialog.setView(Dialogvista)
-                    var dialogo=modeldialog.create()
-                    var list= Dialogvista.findViewById<ListView>(R.id.list)
-                    val adaptador= AdaptadorCustom(vieww!!.context, arreglo!!)
-                    list.adapter=adaptador
                     dialogo.show()
                 }
+
+
             }
+
         }
         return vieww
     }

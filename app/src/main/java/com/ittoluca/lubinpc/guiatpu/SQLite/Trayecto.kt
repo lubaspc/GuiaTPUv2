@@ -1,6 +1,8 @@
 package com.ittoluca.lubinpc.guiatpu.SQLite
 
-class Trayecto(id_ruta:Int,Orden:Int,Lat0:Double,Long0:Double,Lat1:Double,Long1:Double,distancia:Double,tiempo:Double,polyline:String){
+import com.google.android.gms.maps.model.LatLng
+
+class Trayecto(id_ruta:Int,Orden:Int,Lat0:Double,Long0:Double,distancia:Double,tiempo:Double,polyline:String){
         var id_ruta:Int?=null
         var Orden:Int?=null
         var Lat0:Double?=null
@@ -23,3 +25,17 @@ class Trayecto(id_ruta:Int,Orden:Int,Lat0:Double,Long0:Double,Lat1:Double,Long1:
             this.polyline=polyline
         }
     }
+class PuntosCortos(id_ruta:Int,Orden: Int,Punto:LatLng,PuntoF:LatLng,Distancia:Double){
+    var id_ruta:Int
+    var Orden: Int
+    var Punto:LatLng
+    var Distancia:Double
+    var PuntoF:LatLng
+    init {
+        this.id_ruta=id_ruta
+        this.Orden=Orden
+        this.Punto=Punto
+        this.Distancia=Distancia
+        this.PuntoF=PuntoF
+    }
+}
