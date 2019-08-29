@@ -85,7 +85,7 @@ class Login : AppCompatActivity() {
 
 
                 GlobalScope.launch {
-                   // insertarValores()
+                    insertarValores()
                     dialogo.cancel()
                     finish()
                 }

@@ -14,6 +14,7 @@ import android.widget.Toast
 import com.ittoluca.lubinpc.guiatpu.Fragment.Acercad
 import com.ittoluca.lubinpc.guiatpu.Fragment.Main
 import com.ittoluca.lubinpc.guiatpu.Fragment.Todas
+import com.ittoluca.lubinpc.guiatpu.SQLite.CRUD
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_ruta.*
 
@@ -78,6 +79,13 @@ class MainActivity : AppCompatActivity() {
                 modeldialog.setView(Dialogvista)
                 var dialogo=modeldialog.create()
                     dialogo.show()
+                return true
+            }
+            R.id.logaut->{
+                CRUD(this).Destroy()
+                getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+                    .edit().putBoolean("bandera",false).commit()
+                startActivity(Intent(this,Login::class.java))
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
